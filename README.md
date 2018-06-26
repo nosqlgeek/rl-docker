@@ -67,5 +67,5 @@ and then execute one of the scripts. The script 'reprovision.bash' is executing 
 * This script performs all steps in order to provision a cluster (including a demo database).
 
 ```
-reprovision.bash
+./reprovision.bash
 ```
