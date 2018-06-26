@@ -70,4 +70,4 @@ and then execute one of the scripts. The script 'reprovision.bash' is executing 
 ./reprovision.bash
 ```
 
-> Warning: This script will also call 'kill.bash', meaning that you will loose all previously provisined Redis Enterprise containers
+> Warning: This script will also call 'kill.bash', meaning that you will loose all previously provisioned Redis Enterprise containers
