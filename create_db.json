@@ -1,0 +1,14 @@
+{
+    "name": "demo",
+    "port": 16379,
+    "memory_size": 1073741824,
+    "replication": false,
+    "eviction_policy": "volatile-lru",
+    "sharding": false,
+    "shards_count": 1,
+    "shard_key_regex": [
+                { "regex": ".*\\{(?<tag>.*)\\}.*" },
+                { "regex": "(?<tag>.*)" }
+        ],
+    "data_persistence": "disabled"
+}
