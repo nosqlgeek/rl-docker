@@ -24,7 +24,7 @@ In the next step we need to know on which internal IP our name server is listeni
 ./list_dns.bash
 ```
 
-This gave me for instance `172.17.0.6`.
+This gave me for instance `172.17.0.6`. If you don't have an 'sameersbn/bind' container running, then this will return 8.8.8.8 as the default name server.
 
 ## Pass the DNS configuration to the containers
 
