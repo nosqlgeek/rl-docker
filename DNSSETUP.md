@@ -62,6 +62,9 @@ The IP `<dns server ip>` should be in your case already the one of your DNS serv
 
 > Don't forget to save AND apply the configuration to your Bind server!
 
+Screenshots can be found [here](https://github.com/nosqlgeek/rl-docker/blob/master/img/README.md).
+
+
 ## Test it
 
 From within a container in the same Docker network:
