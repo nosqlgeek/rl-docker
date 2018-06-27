@@ -61,3 +61,36 @@ cluster.ubuntu-docker.org.	IN	NS	node3.cluster.ubuntu-docker.org.
 The IP `<dns server ip>` should be in your case already the one of your DNS server's Docker container, but you need to extend the record set by adding the entries for your Redis Enterprise cluster. Each cluster node is running its own DNS server, which enables us to do a transparent failover in case that a node or database endpoint is failing.
 
 > Don't forget to save AND apply the configuration to your Bind server!
+
+## Test it
+
+From within a container in the same Docker network:
+
+* Use 'dig' in order to try to resolve the name of one of your nodes:
+
+```
+apt-get install dnsutils
+dig redis-16379.internal.cluster.ubuntu-docker.org
+```
+
+The answer should look like this:
+
+```
+;; QUESTION SECTION:
+;redis-16379.internal.cluster.ubuntu-docker.org.	IN A
+
+;; ANSWER SECTION:
+redis-16379.internal.cluster.ubuntu-docker.org.	1 IN A 172.17.0.2
+
+;; AUTHORITY SECTION:
+cluster.ubuntu-docker.org. 38400 IN	NS	node3.cluster.ubuntu-docker.org.
+cluster.ubuntu-docker.org. 38400 IN	NS	node1.cluster.ubuntu-docker.org.
+cluster.ubuntu-docker.org. 38400 IN	NS	node2.cluster.ubuntu-docker.org.
+```
+
+* Connect to the database:
+
+```
+/opt/redislabs/bin/redis-cli -h redis-16379.internal.cluster.ubuntu-docker.org -p 16379
+```
+
