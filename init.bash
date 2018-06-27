@@ -3,7 +3,7 @@ export NODE1_ID=rs-1
 export BIN_DIR=/opt/redislabs/bin
 export PATH_STORAGE=/var/opt/redislabs/persist
 export PATH_TMP=/var/opt/redislabs/tmp
-export FQN=ubuntu-docker.org
+export FQN=cluster.ubuntu-docker.org
 export USER=admin@ubuntu-docker.org
 export PASSWD=redis
 
