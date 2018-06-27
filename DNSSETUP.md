@@ -28,5 +28,5 @@ This gave me for instance `172.17.0.6`.
 
 ## Pass the DNS to a container
 
-The script `start.bash` was adapted by adding a `--dns` flag to it. This flag ensures that each container has 
+The script `start.bash` was adapted by adding a `--dns` flag to it. This flag ensures that each container has the name server set inside the `/etc/resolv.conf`
 
