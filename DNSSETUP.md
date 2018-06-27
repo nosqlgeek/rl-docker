@@ -1,6 +1,6 @@
 # How to set up a custom DNS server for your Docker containers
 
-Redis Enterprise is allowing you to connect via a fully qualified endpoint name. The demo database which is created by our `create_db.bash` script is for instance accessible via the public endpoint `redis-16379.ubuntu-docker.org:16379` and the private endpoint `redis-16379.internal.ubuntu-docker.org:16379`. The naming scheme is i.e. `redis-{port}.internal.{fqcn}`, whereby 'fqcn' is the fully qualified cluster name.
+Redis Enterprise is allowing you to connect via a fully qualified endpoint name. The demo database which is created by our `create_db.bash` script is for instance accessible via the public endpoint `redis-16379.cluster.ubuntu-docker.org:16379` and the private endpoint `redis-16379.internal.cluster.ubuntu-docker.org:16379`. The naming scheme is i.e. `redis-{port}.internal.{fqcn}`, whereby 'fqcn' is the fully qualified cluster name.
 
 We need to have an extra DNS server in order to leverage this endpoint name. This article is describing how we can set it up in Docker by enabling other containers to use the fully qualified endpoint name of such a database.
 
