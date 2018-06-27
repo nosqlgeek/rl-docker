@@ -26,7 +26,7 @@ In the next step we need to know on which internal IP our name server is listeni
 
 This gave me for instance `172.17.0.6`.
 
-## Pass the DNS to a container
+## Pass the DNS configuration to the containers
 
 The script `start.bash` was adapted by adding a `--dns` flag to it. This flag ensures that each container has the name server set inside the `/etc/resolv.conf`
 
