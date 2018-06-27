@@ -30,3 +30,34 @@ This gave me for instance `172.17.0.6`.
 
 The script `start.bash` was adapted by adding a `--dns` flag to it. This flag ensures that each container has the name server set inside the `/etc/resolv.conf`
 
+## Configure the DNS
+
+It's now possible to connect to the 'Webmin' UI by using 'https://<docker_host>:10000' (i.e. https://ubuntu-server:10000). The default user is 'root' and the default password is 'password'.
+
+1. Delete all existing DNS zones
+1. Add a new master zone, enter the domain name 'ubuntu-docker.org' and use the master server 'ns.ubuntu-docker.org'
+1. Create a new address within your newly created master zone by using the name 'ns.ubuntu-docker.org' and the internal IP address of your DNS server's docker container
+1. Apply the configuration by clicking on the 'Apply configuration button' in the upper right corner of the screen of the window
+1. Navigate back to the 'Edit Master Zone' dialog and click the 'Edit Records File' button. Extend the records file to look like the following one:
+
+```
+$ttl 38400
+ubuntu-docker.org.	IN	SOA	172.17.0.6. admin.ubuntu-docker.org. (
+			1530094430
+			10800
+			3600
+			604800
+			38400 )
+ns.ubuntu-docker.org.	IN	A	<dns server ip>
+node1.cluster.ubuntu-docker.org.	IN	A	<node 1 ip>
+node2.cluster.ubuntu-docker.org.	IN	A	<node 2 ip>
+node3.cluster.ubuntu-docker.org.	IN	A	<node 3 ip>
+ubuntu-docker.org.	IN	NS	ns.ubuntu-docker.org.
+cluster.ubuntu-docker.org.	IN	NS	node1.cluster.ubuntu-docker.org.
+cluster.ubuntu-docker.org.	IN	NS	node2.cluster.ubuntu-docker.org.
+cluster.ubuntu-docker.org.	IN	NS	node3.cluster.ubuntu-docker.org.
+```
+
+The IP `<dns server ip>` should be in your case already the one of your DNS server's Docker container, but you need to extend the record set by adding the entries for your Redis Enterprise cluster. Each cluster node is running its own DNS server, which enables us to do a transparent failover in case that a node or database endpoint is failing.
+
+> Don't forget to save AND apply the configuration to your Bind server!
