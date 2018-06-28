@@ -1,7 +1,8 @@
 #!/bin/bash
 export DB_PORT=16379
+export NUM_NODES=3
 
-for i in `seq 1 3`
+for i in `seq 1 $NUM_NODES`
 do
 
   dns=`./list_dns.bash`
