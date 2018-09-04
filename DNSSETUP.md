@@ -104,7 +104,29 @@ Here an example records file when multiple clusters are used.
 > The IP of the DNS server changed in the meantime to 172.17.0.2 whereby the cluster nodes are starting with 172.17.0.3
 
 ```
+$ttl 38400
+ubuntu-docker.org.	IN	SOA	172.17.0.2. admin.ubuntu-docker.org. (
+			1530094430
+			10800
+			3600
+			604800
+			38400 )
+ns.ubuntu-docker.org.	IN	A	172.17.0.2
+ubuntu-docker.org.	IN	NS	ns.ubuntu-docker.org.
 
-TODO
+node1.cluster.ubuntu-docker.org.	IN	A	172.17.0.3
+node2.cluster.ubuntu-docker.org.	IN	A	172.17.0.4
+node3.cluster.ubuntu-docker.org.	IN	A	172.17.0.5
+cluster.ubuntu-docker.org.	IN	NS	node1.cluster.ubuntu-docker.org.
+cluster.ubuntu-docker.org.	IN	NS	node2.cluster.ubuntu-docker.org.
+cluster.ubuntu-docker.org.	IN	NS	node3.cluster.ubuntu-docker.org.
+
+node1.cluster2.ubuntu-docker.org.	IN	A	172.17.0.6
+node2.cluster2.ubuntu-docker.org.	IN	A	172.17.0.7
+node3.cluster2.ubuntu-docker.org.	IN	A	172.17.0.8
+cluster2.ubuntu-docker.org.	IN	NS	node1.cluster2.ubuntu-docker.org.
+cluster2.ubuntu-docker.org.	IN	NS	node2.cluster2.ubuntu-docker.org.
+cluster2.ubuntu-docker.org.	IN	NS	node3.cluster2.ubuntu-docker.org.
+
 
 
