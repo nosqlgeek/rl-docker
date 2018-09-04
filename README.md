@@ -69,6 +69,14 @@ and then execute one of the scripts. The script 'reprovision.bash' is executing 
 ./create_db.bash
 ```
 
+## Shell log-in
+
+* This script is used in order to log-in to the first node of the cluster
+
+```
+./login.bash
+```
+
 ## Reprovising a cluster
 
 * This script performs all steps in order to provision a cluster (including a demo database).
