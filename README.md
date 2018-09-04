@@ -78,3 +78,42 @@ and then execute one of the scripts. The script 'reprovision.bash' is executing 
 ```
 
 > Warning: This script will also call 'kill.bash', meaning that you will loose all previously provisioned Redis Enterprise containers
+
+## Using 2 clusters
+
+It's sometimes necessary to have 2 clusters for CRDB testing and demoing purposes.
+
+The latest version is defining all the relevant settings in a file `settings.bash`. There are basically 2 templates:
+
+* settings_cluster_1.bash
+* settings_cluster_2.bash
+
+The script 'switch_cluster.bash' is switching between these two templates by copying the one which is currently not in use to the file 'settings.bash'.
+
+The other scripts are then working as usual, meaning that 'list.bash' will list all cluster nodes of the currently selected cluster.
+
+Here an overview of the settings file:
+
+```
+## CLUSTER1
+  
+# Misc
+export BIN_DIR=/opt/redislabs/bin
+export PORT_OFFSET=0
+
+# Cluster
+export NAME_PREFIX=rs
+export NUM_NODES=3
+export FQN=cluster.ubuntu-docker.org
+export USER=admin@ubuntu-docker.org
+export PASSWD=redis
+
+# Storage
+export PATH_STORAGE=/var/opt/redislabs/persist
+export PATH_TMP=/var/opt/redislabs/tmp
+
+# Database
+export DB_PORT=16379
+```
+
+The first line is indicating the cluster number. The script 'switch_cluster.bash' will take this line into account. The `PORT_OFFSET` is important because we can't use the same external ports for both clusters. The `NAME_PREFIX` is used in order to generate the docker container names. The containers of the first clusters are named 'rs-1' ... 'rs-3' whereby the containers of the second cluster are named 'crdb-1' ... 'crdb-3'. Each cluster has a `FQN` which is relevant regarding the name resolution. Our first cluster uses the FQN 'cluster.ubuntu-docker.org', whereby our second cluster is using 'cluster2.ubuntu-docker.org'. I also added the text file 'example_dns_records.txt' which contains some example DNS records.
