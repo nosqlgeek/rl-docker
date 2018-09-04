@@ -97,3 +97,14 @@ cluster.ubuntu-docker.org. 38400 IN	NS	node2.cluster.ubuntu-docker.org.
 /opt/redislabs/bin/redis-cli -h redis-16379.internal.cluster.ubuntu-docker.org -p 16379
 ```
 
+## Using multiple clusters
+
+Here an example records file when multiple clusters are used.
+
+> The IP of the DNS server changed in the meantime to 172.17.0.2 whereby the cluster nodes are starting with 172.17.0.3
+
+```
+
+TODO
+
+
