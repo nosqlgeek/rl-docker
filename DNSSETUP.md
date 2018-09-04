@@ -99,9 +99,8 @@ cluster.ubuntu-docker.org. 38400 IN	NS	node2.cluster.ubuntu-docker.org.
 
 ## Using multiple clusters
 
-Here an example records file when multiple clusters are used.
+Here an example records file when multiple clusters are used:
 
-> The IP of the DNS server changed in the meantime to 172.17.0.2 whereby the cluster nodes are starting with 172.17.0.3
 
 ```
 $ttl 38400
@@ -127,6 +126,6 @@ node3.cluster2.ubuntu-docker.org.	IN	A	172.17.0.8
 cluster2.ubuntu-docker.org.	IN	NS	node1.cluster2.ubuntu-docker.org.
 cluster2.ubuntu-docker.org.	IN	NS	node2.cluster2.ubuntu-docker.org.
 cluster2.ubuntu-docker.org.	IN	NS	node3.cluster2.ubuntu-docker.org.
+```
 
-
-
+> The IP of the DNS server changed in the meantime to 172.17.0.2 whereby the cluster nodes are starting with 172.17.0.3
