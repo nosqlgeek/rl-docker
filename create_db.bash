@@ -1,8 +1,6 @@
 #!/bin/bash
-export NODE1_ID=rs-1
-export USER=admin@ubuntu-docker.org
-export PASSWD=redis
-export DB_PORT=16379
+source ./settings.bash
+export NODE1_ID=${NAME_PREFIX}-1
 
 master=`./list.bash | grep $NODE1_ID | cut -f1 -d' '`
 echo master = $master

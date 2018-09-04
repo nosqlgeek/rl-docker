@@ -6,6 +6,7 @@
     "eviction_policy": "volatile-lru",
     "sharding": false,
     "shards_count": 1,
+    "rack_aware": false,
     "shard_key_regex": [
                 { "regex": ".*\\{(?<tag>.*)\\}.*" },
                 { "regex": "(?<tag>.*)" }
