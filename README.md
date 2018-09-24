@@ -2,11 +2,16 @@
 
 Some wrapper scripts in order to provision a Redis Enterprise cluster in Docker. The article is extending on https://hub.docker.com/r/redislabs/redis/ .
 
-In addtion, there are are bunch of scripts which are helping with the setup of a DNS server. Redis Enterprise is supporting to connect via a fully qualified name to a database endpoint. This allows a transparent failover without the need to use additional discovery mechanisms (i.e. Sentinel or `CLUSTER SLOTS`). The DNS setup is currently not fully automated but needs some manual intervention. If you want to use name based access within your internal Docker network then:
+## Networking
 
-1. Start the DNS server's container by using 'start_dns.bash'
+There is also a script which is helping with the setup of a DNS server. 
+
+Redis Enterprise is supporting to connect via a fully qualified name to a database endpoint. This allows a transparent failover without the need to use additional discovery mechanisms (i.e. Sentinel or `CLUSTER SLOTS`). The DNS setup is currently not fully automated but needs some manual intervention. If you want to use name based access within your internal Docker network then:
+
+1. Review the configuration by looking at the 'settings.bash' file
+1. Ensure that the network is set up and that the DNS server is started by using 'reprovision_network.bash'
 1. Provision a cluster by using i.e. 'reprovision.bash'
-1. Complete the DNS setup by configuring the DNS server as described in the [DNS setup guide](https://github.com/nosqlgeek/rl-docker/blob/master/DNSSETUP.md)
+1. Complete the DNS setup by configuring the DNS server as described in the [DNS setup guide](https://github.com/nosqlgeek/rl-docker/blob/master/DNSSETUP.md). If you didn't need to change the network settings then TODO
 
 
 ## How to use
