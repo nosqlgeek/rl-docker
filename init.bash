@@ -6,7 +6,7 @@ export RACK_ZONE=rz-1
 
 master=`./list.bash | grep $NODE1_ID | cut -f1 -d' '`
 echo master = $master
-int_ip=`docker inspect -f '{{ .NetworkSettings.IPAddress }}' $master`
+int_ip=`docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $master`
 
 echo Initializing ...
 echo ip = $int_ip

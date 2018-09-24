@@ -7,6 +7,6 @@ if [ "${id}x" == "x" ]
 then
    echo 8.8.8.8
 else
-   ip=`docker inspect -f '{{ .NetworkSettings.IPAddress }}' $id`
+   ip=`docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $id`
    echo $ip
 fi

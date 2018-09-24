@@ -1,3 +1,4 @@
+
 ## CLUSTER1
 
 # Misc
@@ -11,6 +12,9 @@ export FQN=cluster.ubuntu-docker.org
 export USER=admin@ubuntu-docker.org
 export PASSWD=redis
 
+# Network
+export NET_NAME=rs-net
+export NET_CIDR=172.1.0.0/24
 
 # Storage
 export PATH_STORAGE=/var/opt/redislabs/persist

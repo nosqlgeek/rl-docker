@@ -4,7 +4,6 @@ function wait() {
    sleep $1
 }
 
-
 echo "### kill ###"
 ./kill.bash
 wait 5
