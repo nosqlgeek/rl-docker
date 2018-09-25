@@ -43,7 +43,7 @@ The script
 ./start_dns.bash
 ```
 
-is starting a bind DNS server. This container is using local storage in order to load the settings at startup. The bind DNS server is listening on the IP 'x.y.z.201', whereby 'x.y.z' is specified via the configured NET_CIDR. So the default IP is '172.1.0.201'. The DNS server is currently started but not readily configured. The file [Example Records File](https://github.com/nosqlgeek/rl-docker/blob/master/example_dns_records.txt) is showing the records file which can be used if you keep the default settings.
+is starting a bind DNS server. This container is using local storage in order to load the settings at startup. The bind DNS server is listening on the IP 'x.y.z.201', whereby 'x.y.z' is specified via the configured NET_CIDR. So the default IP is '172.1.0.201'. After the start script was executed, the DNS server will be started but not yet readily configured. The file [Example Records File](https://github.com/nosqlgeek/rl-docker/blob/master/example_dns_records.txt) is showing the records file which can be used if you keep the default settings.
 
 1. Ensure that the network is set up and that the DNS server is started
 1. Complete the DNS setup by configuring the DNS server as described in the [DNS setup guide](https://github.com/nosqlgeek/rl-docker/blob/master/DNSSETUP.md). Some screen shots can be found here: [DNS setup guide](https://github.com/nosqlgeek/rl-docker/blob/master/img/README.md).
