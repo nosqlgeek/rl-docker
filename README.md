@@ -159,3 +159,11 @@ This script is used in order to create a 1GB demo database which is listening on
 ```
 ./create_db.bash
 ```
+
+## Create a clustered demo database
+
+This script is used in order to create a 1GB demo database which is listening on port 16379. The demo database is configured with 2 master shards and 2 slave shards. In addition, it has the OSS Cluster API enabled.
+
+```
+./create_clustered_db.bash
+```
