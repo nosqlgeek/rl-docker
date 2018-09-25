@@ -72,7 +72,13 @@ The default environment is the one of 'cluster 1'. There are basically 2 templat
 * `settings_cluster_1.bash`
 * `settings_cluster_2.bash`
 
-The script 'switch_cluster.bash' is switching between these two templates by copying the one which is currently not in use to the file `settings.bash`.
+The script 
+
+```
+./switch_cluster.bash
+```
+
+is switching between these two templates by copying the one which is currently not in use to the file `settings.bash`.
 
 > Warning: Please keep in mind that `switch_cluster.bash` will override your previous changes in `settings.bash`.
 
