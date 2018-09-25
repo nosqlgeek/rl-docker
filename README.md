@@ -13,7 +13,7 @@ cd rl-docker
 The script
 
 ```
-./settings.bash
+settings.bash
 ```
 
 contains all the relevant environment variables. You should run the script at least once with the default settings in order to get an understanding what it does.
