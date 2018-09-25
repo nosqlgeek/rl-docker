@@ -12,7 +12,9 @@ cd rl-docker
 
 The script
 
-* `settings.bash`
+```
+./settings.bash
+```
 
 contains all the relevant environment variables. You should run the script at least once with the default settings in order to get an understanding what it does.
 
@@ -22,7 +24,9 @@ contains all the relevant environment variables. You should run the script at le
 
 The script
 
-* `create_network.bash`
+```
+./create_network.bash
+```
 
 is used in order to prepare the bridged network in which your Redis Enteprise containers are running. The following settings are used:
 
@@ -35,7 +39,9 @@ Redis Enterprise is supporting to connect via a fully qualified name to a databa
 
 The script
 
-* `start_dns.bash`
+```
+./start_dns.bash
+```
 
 is starting a bind DNS server. This container is using local storage in order to load the settings at startup. The bind DNS server is listening on the IP 'x.y.z.201', whereby 'x.y.z' is specified via the configured NET_CIDR. So the default IP is '172.1.0.201'. The DNS server is currently started but not readily configured. The file [Example Records File](https://github.com/nosqlgeek/rl-docker/blob/master/example_dns_records.txt) is showing the records file which can be used if you keep the default settings.
 
@@ -51,7 +57,9 @@ is starting a bind DNS server. This container is using local storage in order to
 
 In order to ensure that the network is created and the DNS server is (re)started, the script
 
-* `reprovision_network.bash`
+```
+./reprovision_network.bash
+```
 
 can be used.
 
@@ -74,7 +82,9 @@ Here some explainations about the template files: The first line is indicating t
 
 The script
 
-* `reprovision.bash`
+```
+./reprovision.bash
+```
 
 is calling a bunch of other scripts. The following steps are performed:
 
