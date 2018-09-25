@@ -102,8 +102,23 @@ is calling a bunch of other scripts. The following steps are performed:
 
 > Warning: This script will also call 'kill.bash', meaning that you will loose all previously provisioned Redis Enterprise containers
 
+## Step 4 - Log-in and test the DB connection
 
-## Commands
+The script
+
+```
+./login.bash
+```
+
+can be used in order to log-in to the first node of the cluster.
+
+If you kept the default settings, then the following command should connect you to the demo database:
+
+```
+redis-cli -h redis-16379.internal.cluster.ubuntu-docker.org -p 16379
+```
+
+## Misc. Commands
 
 ### List nodes
 
@@ -143,12 +158,4 @@ This script is used in order to create a 1GB demo database which is listening on
 
 ```
 ./create_db.bash
-```
-
-## Shell log-in
-
-This script is used in order to log-in to the first node of the cluster
-
-```
-./login.bash
 ```
