@@ -151,4 +151,4 @@ This script is used in order to log-in to the first node of the cluster
 
 ```
 ./login.bash
-``
+```
