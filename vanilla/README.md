@@ -5,13 +5,21 @@
 > The Dockerfile is currently referencing a file which is named redislabs-5.2.0.tar
 
 
-* Build the image
+* Build the container image
 
 ```
 docker build -t ubuntu-server .
 ```
 
-* Start the image
+* Make sure that the network is set up
+
+```
+cd ..
+./provision_network.bash
+cd vanilla
+```
+
+* Start the container
 
 ```
 ./start_vanilla.bash
