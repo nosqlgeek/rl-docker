@@ -25,6 +25,12 @@ cd vanilla
 ./start_vanilla.bash
 ```
 
+* Log-in to the container
+
+```
+docker exec -it $CONTID /bin/bash
+```
+
 * Install Redis Enterprise
 
 ```
