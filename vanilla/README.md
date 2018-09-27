@@ -15,7 +15,7 @@ docker build -t ubuntu-server .
 
 ```
 cd ..
-./provision_network.bash
+./reprovision_network.bash
 cd vanilla
 ```
 
