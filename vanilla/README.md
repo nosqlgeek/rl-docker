@@ -42,5 +42,5 @@ cd /opt
 
 ```
 cd /opt
-./start.sh
+./start.sh &
 ```
