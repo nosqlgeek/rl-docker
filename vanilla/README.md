@@ -1,4 +1,4 @@
-## Performing an installation from scratch by using a vanialla Ubuntu Server
+## Performing an installation from scratch by using a vanilla Ubuntu Server
 
 * Download the Redis Enterprise Software installation package and place it in this folder
 
