@@ -1,4 +1,4 @@
-# Host prep
+# Training Environment Preparations
 
 ## Step 1 - Prepare an Ubuntu 16.04 instance
 
