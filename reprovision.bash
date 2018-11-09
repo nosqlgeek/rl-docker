@@ -12,6 +12,9 @@ echo "### start ###"
 ./start.bash
 wait 60
 
+echo "### dns ###"
+./fix_dns.bash
+
 echo "### init ###"
 ./init.bash
 wait 30

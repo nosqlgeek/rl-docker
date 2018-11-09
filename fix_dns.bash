@@ -1,6 +1,5 @@
 #!/bin/bash
-export DB_PORT=16379
-export FQN=cluster.ubuntu-docker.org
+source ./settings.bash
 
 dns=`./list_dns.bash`
 echo dns = $dns
