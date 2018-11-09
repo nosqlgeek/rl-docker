@@ -59,3 +59,9 @@ https://<ip>:10000
 
 * user: root
 * password: password
+
+## Step 10 - Login
+
+```
+sudo ./login.bash
+```
