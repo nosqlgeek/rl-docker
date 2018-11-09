@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 
-ARG installer_file=redislabs-5.2.0.tar
+ARG installer_file=redislabs-5.2.2-22-xenial-amd64.tar
 
 ENV IS_CONTAINERIZED=1
 
