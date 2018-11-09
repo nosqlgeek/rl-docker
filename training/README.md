@@ -1,4 +1,4 @@
-# Host prep
+# Training Environment Preparations
 
 ## Step 1 - Prepare an Ubuntu 16.04 instance
 
@@ -42,7 +42,7 @@ sudo ./start_dns.bash
 sudo ./reprovision.bash
 ```
 
-### Step 8 - Admin UI
+## Step 8 - Admin UI
 
 ```
 https://<ip>:18443
@@ -51,7 +51,7 @@ https://<ip>:18443
 * user: admin@ubuntu-docker.org
 * password: redis
 
-### Step 9 - DNS Admin
+## Step 9 - DNS Admin
 
 ```
 https://<ip>:10000
