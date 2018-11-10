@@ -51,7 +51,16 @@ https://<ip>:18443
 * user: admin@ubuntu-docker.org
 * password: redis
 
-## Step 9 - DNS Admin
+
+## Step 9 - Prepare a vanilla Ubuntu machine
+
+```
+cd vanilla
+./start_vanilla.bash
+cd ..
+```
+
+## Step 10 - DNS Admin
 
 ```
 https://<ip>:10000
@@ -60,7 +69,7 @@ https://<ip>:10000
 * user: root
 * password: password
 
-## Step 10 - Login
+## Step 11 - Login
 
 ```
 sudo ./login.bash
