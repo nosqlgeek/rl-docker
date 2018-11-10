@@ -56,6 +56,7 @@ https://<ip>:18443
 
 ```
 cd vanilla
+docker build -t ubuntu-server .
 ./start_vanilla.bash
 cd ..
 ```
