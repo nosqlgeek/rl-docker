@@ -7,8 +7,8 @@ tar -cvf rl-docker.tar rl-docker
 mv rl-docker.tar $CURR_WD
 cd $CURR_WD
 
-CLEAN=1
-DEPLOY=0
+CLEAN=0
+DEPLOY=1
 
 while read m; do
   echo "$m"
@@ -16,7 +16,7 @@ while read m; do
   then
      echo Copying clean script ...
      scp -i training clean.bash ubuntu@${m}:/home/ubuntu/
-     ssh -n -i training ubuntu@${m} /home/ubuntu/clean.bash
+     ssh -n -i training ubuntu@${m} 'sudo /home/ubuntu/clean.bash'
   fi
 
   if [ "$DEPLOY" == "1" ]
