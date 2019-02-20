@@ -1,4 +1,8 @@
 
+## DNS
+export DNS_TEMP_DIR=/tmp/sameers-dns-docker/
+
+
 ## CLUSTER1
 
 # Misc
