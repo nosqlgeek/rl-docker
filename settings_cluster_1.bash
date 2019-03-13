@@ -1,5 +1,7 @@
-
 ## CLUSTER1
+
+# Container
+export IMG_VERSION=5.2.2-24
 
 # Misc
 export BIN_DIR=/opt/redislabs/bin
