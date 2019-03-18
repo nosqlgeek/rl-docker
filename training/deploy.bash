@@ -1,12 +1,26 @@
 #!/bin/bash
 export CURR_WD=$PWD
 
+source ./settings.bash
+
+## Caused issues with SCP even if host key verification was disabled
+DATE=`date +%s`
+cp $HOME/.ssh/known_hosts $HOME/.ssh/known_hosts.bkp.$DATE
+rm $HOME/.ssh/known_hosts
+
+## Ensure that everything is there
+cd ../vanilla
+./copy_missing.bash
+cd $CURR_WD
+
+## Package
 echo Packaging ...
 cd ../..
 tar -cvf rl-docker.tar rl-docker
 mv rl-docker.tar $CURR_WD
 cd $CURR_WD
 
+## Deploy
 CLEAN=0
 DEPLOY=1
 
