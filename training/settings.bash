@@ -8,6 +8,3 @@ export PATH=$GCLOUD_PATH:$PATH
 
 ## Project and user settings
 gcloud info
-
-## Machine type
-GCLOUD_MACHINE=n1-standard-8
