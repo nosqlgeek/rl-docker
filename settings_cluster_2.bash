@@ -1,7 +1,8 @@
 ## CLUSTER2
 
 # Container
-export IMG_VERSION=5.2.2-24
+#export IMG_VERSION=5.2.2-24
+export IMG_VERSION=5.4.10-22
 
 # Misc
 export BIN_DIR=/opt/redislabs/bin
@@ -18,9 +19,11 @@ export PASSWD=redis
 export NET_NAME=rs-net
 export NET_CIDR=172.1.0.0/24
 
+
 # Storage
 export PATH_STORAGE=/var/opt/redislabs/persist
 export PATH_TMP=/var/opt/redislabs/tmp
 
 # Database
 export DB_PORT=16379
+export SENT_PORT=8001

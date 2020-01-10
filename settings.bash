@@ -1,7 +1,7 @@
 ## CLUSTER1
 
 # Container
-export IMG_VERSION=5.2.2-24
+export IMG_VERSION=5.4.10-22
 
 # Misc
 export BIN_DIR=/opt/redislabs/bin
@@ -24,3 +24,4 @@ export PATH_TMP=/var/opt/redislabs/tmp
 
 # Database
 export DB_PORT=16379
+export SENT_PORT=8001
