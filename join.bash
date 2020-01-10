@@ -18,6 +18,6 @@ do
   echo "Node $count joining ..."
   ip_int=`docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $i`
   echo ip = $ip_int
-
+   
   docker exec $i bash -c  "$BIN_DIR/rladmin cluster join rack_id $rack_zone persistent_path $PATH_STORAGE ephemeral_path $PATH_TMP addr $ip_int external_addr $ip_int username $USER password $PASSWD nodes $master_ip"
 done
